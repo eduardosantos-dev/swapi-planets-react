@@ -6,13 +6,6 @@ export function getRandomPlanet() {
 
 function getRandomPlanetId() {
   const planetCount = 61;
-  // let planetId;
-
-  // return getPlanetCount()
-  //   .then(res => (planetCount = res))
-  //   .then(() => (planetId = Math.floor(Math.random() * planetCount + 1)))
-  //   .then(() => planetId);
-
   return Math.floor(Math.random() * planetCount + 1);
 }
 
