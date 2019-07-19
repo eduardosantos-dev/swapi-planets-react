@@ -8,31 +8,63 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
+
+const mainTheme = createMuiTheme({
+  palette: {
+    primary: {
+      main: `#FFE81F`
+    },
+    secondary: {
+      main: `#000`
+    }
+  }
+});
 
 const useStyles = makeStyles({
+  box: {
+    display: "flex",
+    justifyContent: "center"
+  },
   card: {
+    maxWidth: 450,
+    minHeight: 300,
+    marginTop: 50,
+    backgroundColor: mainTheme.palette.secondary.main,
+    border: `solid 1px ${mainTheme.palette.primary.main}`,
+    zIndex: 1,
+    display: "flex",
+    flex: 1,
+    flexDirection: "column",
+    alignSelf: "center",
+    textAlign: "left",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
+  cardContent: {
     display: "flex",
     flexDirection: "column",
-    flex: 1,
-    maxWidth: 375,
-    marginTop: 50,
-    alignItems: "center",
-    textAlign: "center",
-    backgroundColor: "black",
-    color: "#FFE81F",
-    border: "solid 1px #FFE81F"
+    minWidth: "100%"
   },
   title: {
-    fontSize: 24
+    fontSize: "2em"
   },
-  pos: {
-    marginBottom: 12
+  planetInfoItem: {
+    paddingLeft: 25,
+    paddingRight: 25,
+    marginBottom: 15,
+    fontSize: "1.2em"
+  },
+  planetInfoData: {
+    color: "white"
   }
 });
 
 export default function PlanetCard(props) {
   const [planet, setPlanet] = useState(null);
   const classes = useStyles();
+  const { primary } = mainTheme.palette;
 
   const getRandomPlanet = () => {
     API.getRandomPlanet().then(result => {
@@ -47,39 +79,59 @@ export default function PlanetCard(props) {
   return (
     <>
       {planet && (
-        <Box
-          display="flex"
-          justifyContent="center"
-          flexDirection="row"
-          alignItems="flex-end"
-        >
-          <Card className={classes.card}>
-            <CardContent>
-              <Typography variant="h5" component="h2" className={classes.title}>
-                {planet.name}
-              </Typography>
-              <hr />
-              <Typography gutterBottom>
-                Population: {planet.population}
-              </Typography>
-              <Typography className={classes.pos}>
-                Terrain: {planet.terrain}
-              </Typography>
-              <Typography variant="body2" component="p">
-                {utils.getFeaturedInFilmsString(planet.films.length)}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button
-                size="large"
-                onClick={() => getRandomPlanet()}
-                color="secondary"
-              >
-                Next
-              </Button>
-            </CardActions>
-          </Card>
-        </Box>
+        <ThemeProvider theme={mainTheme}>
+          <Box className={classes.box}>
+            <Card className={classes.card}>
+              <CardContent className={classes.cardContent}>
+                <Typography
+                  variant="h5"
+                  component="h2"
+                  className={classes.title}
+                  color="primary"
+                >
+                  {planet.name}
+                </Typography>
+                <hr
+                  style={{
+                    marginTop: 25,
+                    marginBottom: 25,
+                    border: `1px solid ${primary.main}`
+                  }}
+                />
+                <Typography className={classes.planetInfoItem} color="primary">
+                  Population:{" "}
+                  <span className={classes.planetInfoData}>
+                    {planet.population}
+                  </span>
+                </Typography>
+                <Typography className={classes.planetInfoItem} color="primary">
+                  Terrain:{" "}
+                  <span className={classes.planetInfoData}>
+                    {planet.terrain}
+                  </span>
+                </Typography>
+                <Typography
+                  className={classes.planetInfoItem}
+                  style={{ alignSelf: "center", marginTop: 50 }}
+                  color="primary"
+                >
+                  {utils.getFeaturedInFilmsString(planet.films.length)}
+                </Typography>
+              </CardContent>
+              <CardActions style={{ width: "94%" }}>
+                <Button
+                  size="large"
+                  onClick={() => getRandomPlanet()}
+                  color="primary"
+                  variant="contained"
+                  fullWidth
+                >
+                  <span style={{ fontWeight: "bold" }}>Next</span>
+                </Button>
+              </CardActions>
+            </Card>
+          </Box>
+        </ThemeProvider>
       )}
     </>
   );

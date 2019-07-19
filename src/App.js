@@ -7,6 +7,8 @@ class App extends Component {
   render() {
     return (
       <Container>
+        <div className="stars" />
+        <div className="twinkling" />
         <PlanetCard />
       </Container>
     );
