@@ -1,16 +1,23 @@
+let planetCount;
+
 export function getRandomPlanet() {
-  return fetch(`https://swapi.co/api/planets/${getRandomPlanetId()}/`).then(
-    response => response.json()
+  return getRandomPlanetId().then(planetId =>
+    fetch(`https://swapi.co/api/planets/${planetId}/`).then(res => res.json())
   );
 }
 
 function getRandomPlanetId() {
-  const planetCount = 61;
-  return Math.floor(Math.random() * planetCount + 1);
+  return getPlanetCount().then(() =>
+    Math.floor(Math.random() * planetCount + 1)
+  );
 }
 
 function getPlanetCount() {
-  return fetch(`https://swapi.co/api/planets/`)
-    .then(response => response.json())
-    .then(data => data.count);
+  if (typeof planetCount !== "undefined") {
+    return new Promise(resolve => resolve()).then(() => planetCount);
+  } else {
+    return fetch(`https://swapi.co/api/planets/`)
+      .then(response => response.json())
+      .then(data => (planetCount = data.count));
+  }
 }

@@ -29,7 +29,7 @@ const useStyles = makeStyles({
   },
   card: {
     maxWidth: 450,
-    minHeight: 300,
+    minHeight: 400,
     marginTop: 50,
     backgroundColor: mainTheme.palette.secondary.main,
     border: `solid 1px ${mainTheme.palette.primary.main}`,
@@ -115,7 +115,7 @@ export default function PlanetCard(props) {
                   style={{ alignSelf: "center", marginTop: 50 }}
                   color="primary"
                 >
-                  {utils.getFeaturedInFilmsString(planet.films.length)}
+                  {/* {utils.getFeaturedInFilmsString(planet.films.length)} */}
                 </Typography>
               </CardContent>
               <CardActions style={{ width: "94%" }}>
