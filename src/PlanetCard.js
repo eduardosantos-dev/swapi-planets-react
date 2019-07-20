@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
+import { ClipLoader } from "react-spinners";
 
 const mainTheme = createMuiTheme({
   palette: {
@@ -61,15 +62,24 @@ const useStyles = makeStyles({
   }
 });
 
-export default function PlanetCard(props) {
+export default function PlanetCard() {
   const [planet, setPlanet] = useState(null);
+  const [isFetching, setIsFetching] = useState(false);
   const classes = useStyles();
   const { primary } = mainTheme.palette;
+  //let fetchInProgress = false;
 
   const getRandomPlanet = () => {
-    API.getRandomPlanet().then(result => {
-      setPlanet(result);
-    });
+    setIsFetching(true);
+    API.getRandomPlanet()
+      .then(result => {
+        setPlanet(result);
+        setIsFetching(false);
+      })
+      .catch(() => {
+        console.error("erro");
+        setIsFetching(false);
+      });
   };
 
   useEffect(() => {
@@ -78,61 +88,75 @@ export default function PlanetCard(props) {
 
   return (
     <>
-      {planet && (
-        <ThemeProvider theme={mainTheme}>
-          <Box className={classes.box}>
-            <Card className={classes.card}>
-              <CardContent className={classes.cardContent}>
-                <Typography
-                  variant="h5"
-                  component="h2"
-                  className={classes.title}
-                  color="primary"
-                >
-                  {planet.name}
-                </Typography>
-                <hr
-                  style={{
-                    marginTop: 25,
-                    marginBottom: 25,
-                    border: `1px solid ${primary.main}`
-                  }}
-                />
-                <Typography className={classes.planetInfoItem} color="primary">
-                  Population:{" "}
-                  <span className={classes.planetInfoData}>
-                    {planet.population}
-                  </span>
-                </Typography>
-                <Typography className={classes.planetInfoItem} color="primary">
-                  Terrain:{" "}
-                  <span className={classes.planetInfoData}>
-                    {planet.terrain}
-                  </span>
-                </Typography>
-                <Typography
-                  className={classes.planetInfoItem}
-                  style={{ alignSelf: "center", marginTop: 50 }}
-                  color="primary"
-                >
-                  {/* {utils.getFeaturedInFilmsString(planet.films.length)} */}
-                </Typography>
-              </CardContent>
-              <CardActions style={{ width: "94%" }}>
-                <Button
-                  size="large"
-                  onClick={() => getRandomPlanet()}
-                  color="primary"
-                  variant="contained"
-                  fullWidth
-                >
-                  <span style={{ fontWeight: "bold" }}>Next</span>
-                </Button>
-              </CardActions>
-            </Card>
-          </Box>
-        </ThemeProvider>
-      )}
+      <ThemeProvider theme={mainTheme}>
+        <Box className={classes.box}>
+          <Card className={classes.card}>
+            {isFetching || !planet ? (
+              <ClipLoader
+                color={primary.main}
+                size={75}
+                css={{ marginTop: 150 }}
+              />
+            ) : (
+              <>
+                <CardContent className={classes.cardContent}>
+                  <Typography
+                    variant="h5"
+                    component="h2"
+                    className={classes.title}
+                    color="primary"
+                  >
+                    {planet.name}
+                  </Typography>
+                  <hr
+                    style={{
+                      marginTop: 25,
+                      marginBottom: 25,
+                      border: `1px solid ${primary.main}`
+                    }}
+                  />
+                  <Typography
+                    className={classes.planetInfoItem}
+                    color="primary"
+                  >
+                    Population:{" "}
+                    <span className={classes.planetInfoData}>
+                      {planet.population}
+                    </span>
+                  </Typography>
+                  <Typography
+                    className={classes.planetInfoItem}
+                    color="primary"
+                  >
+                    Terrain:{" "}
+                    <span className={classes.planetInfoData}>
+                      {planet.terrain}
+                    </span>
+                  </Typography>
+                  <Typography
+                    className={classes.planetInfoItem}
+                    style={{ alignSelf: "center", marginTop: 50 }}
+                    color="primary"
+                  >
+                    {utils.getFeaturedInFilmsString(planet.films.length)}
+                  </Typography>
+                </CardContent>
+                <CardActions style={{ width: "94%" }}>
+                  <Button
+                    size="large"
+                    onClick={() => getRandomPlanet()}
+                    color="primary"
+                    variant="contained"
+                    fullWidth
+                  >
+                    <span style={{ fontWeight: "bold" }}>Next</span>
+                  </Button>
+                </CardActions>
+              </>
+            )}
+          </Card>
+        </Box>
+      </ThemeProvider>
     </>
   );
 }
