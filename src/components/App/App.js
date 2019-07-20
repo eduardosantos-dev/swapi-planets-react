@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import PlanetCard from "./PlanetCard";
+import PlanetCard from "../PlanetCard/PlanetCard";
 import { Container } from "@material-ui/core";
-import "./App.css";
-import TwinklingStars from "./TwinklingStars";
+import "../../index.css";
+import TwinklingStars from "../TwinklingStars/TwinklingStars";
 
 class App extends Component {
   render() {

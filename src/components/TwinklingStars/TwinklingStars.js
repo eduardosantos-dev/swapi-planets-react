@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./TwinklingStars.css";
 
 export default function TwinklingStars() {
   return (

@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
-import * as API from "./API";
-import * as utils from "./utils";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-import { createMuiTheme } from "@material-ui/core/styles";
-import { ThemeProvider } from "@material-ui/styles";
+import * as API from "../../helpers/API";
+import * as utils from "../../helpers/utils";
 import { ClipLoader } from "react-spinners";
+import { ThemeProvider } from "@material-ui/styles";
+import {
+  Card,
+  CardActions,
+  CardContent,
+  Button,
+  Typography,
+  Box,
+  createMuiTheme,
+  makeStyles
+} from "@material-ui/core";
 
 const mainTheme = createMuiTheme({
   palette: {
@@ -67,7 +69,6 @@ export default function PlanetCard() {
   const [isFetching, setIsFetching] = useState(false);
   const classes = useStyles();
   const { primary } = mainTheme.palette;
-  //let fetchInProgress = false;
 
   const getRandomPlanet = () => {
     setIsFetching(true);
@@ -77,7 +78,7 @@ export default function PlanetCard() {
         setIsFetching(false);
       })
       .catch(() => {
-        console.error("erro");
+        console.error("Unable to load planet");
         setIsFetching(false);
       });
   };
