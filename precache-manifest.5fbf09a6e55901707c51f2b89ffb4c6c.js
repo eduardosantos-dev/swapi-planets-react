@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "69c46de6e103ca6a55dd2f084f7922dc",
+    "revision": "39c4bd730363f50939aafec7741c6795",
     "url": "/swapi-planets-react/index.html"
   },
   {
-    "revision": "a9bbff044a352c4eddcc",
+    "revision": "9cec6eb73211828099f3",
     "url": "/swapi-planets-react/static/css/main.35f80fe7.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/swapi-planets-react/static/js/2.84021a29.chunk.js"
   },
   {
-    "revision": "a9bbff044a352c4eddcc",
-    "url": "/swapi-planets-react/static/js/main.8bc95056.chunk.js"
+    "revision": "9cec6eb73211828099f3",
+    "url": "/swapi-planets-react/static/js/main.a981f79b.chunk.js"
   },
   {
     "revision": "46eb2ffc451b31832507",

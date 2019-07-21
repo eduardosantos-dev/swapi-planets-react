@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/swapi-planets-react/precache-manifest.5296c1b960faee7d2e728270632a6788.js"
+  "/swapi-planets-react/precache-manifest.5fbf09a6e55901707c51f2b89ffb4c6c.js"
 );
 
 self.addEventListener('message', (event) => {
