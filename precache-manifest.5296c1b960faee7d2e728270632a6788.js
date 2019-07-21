@@ -1,23 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9da2cde3c4eed8c0dea5e0423b2fa659",
+    "revision": "69c46de6e103ca6a55dd2f084f7922dc",
     "url": "/swapi-planets-react/index.html"
   },
   {
-    "revision": "f550e162fc1f025e3533",
+    "revision": "a9bbff044a352c4eddcc",
     "url": "/swapi-planets-react/static/css/main.35f80fe7.chunk.css"
   },
   {
-    "revision": "17715077e19b46965b9d",
-    "url": "/swapi-planets-react/static/js/2.efb316c2.chunk.js"
+    "revision": "406a72c6c98adf8c885b",
+    "url": "/swapi-planets-react/static/js/2.84021a29.chunk.js"
   },
   {
-    "revision": "f550e162fc1f025e3533",
-    "url": "/swapi-planets-react/static/js/main.53028e49.chunk.js"
+    "revision": "a9bbff044a352c4eddcc",
+    "url": "/swapi-planets-react/static/js/main.8bc95056.chunk.js"
   },
   {
     "revision": "46eb2ffc451b31832507",
     "url": "/swapi-planets-react/static/js/runtime~main.e53256db.js"
+  },
+  {
+    "revision": "3bd240d1095303cbec81012dd0529638",
+    "url": "/swapi-planets-react/static/media/Github-icon.3bd240d1.svg"
+  },
+  {
+    "revision": "86c973b582415a91502da300ce091866",
+    "url": "/swapi-planets-react/static/media/Linkedin-icon.86c973b5.svg"
   },
   {
     "revision": "4a0dffa736fb547fe0992a6c82d21eab",
