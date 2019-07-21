@@ -2,13 +2,9 @@
 
 ## Introdução
 
----
-
 Desafio proposto pela B2W, onde o objetivo é desenvolver uma aplicação que exiba aleatoriamente informações de um planeta da franquia Star Wars. Estas informações podem ser utilizadas como "cola" em um jogo de advinhação. A equipe da B2W desenvolveu a seguinte proposta de interface: ![proposta de interface](https://lh3.googleusercontent.com/tubJ22pBao1DQy3o0VfBjcmrN4epO7Q04KVk3D1JeVSIuJwvoDru-XqtxDnHsX7yeZz-qdkXpb2HZNrc5FFV9XKezGuzERTa2jagCy5Ht3sEl8JBHzJrCxn_8SkjYqmfGfJcN_Rb)
 
 ## Tecnologias
-
----
 
 - HTML
 - CSS
@@ -21,13 +17,9 @@ Desafio proposto pela B2W, onde o objetivo é desenvolver uma aplicação que ex
 
 ## API
 
----
-
 Este projeto utiliza a [SWAPI](https://swapi.co/), uma API incrível que fornece dados de todo universo Canônico de Star Wars.
 
 ## Instalação
-
----
 
 ### Clonando respositório
 
