@@ -21,14 +21,14 @@ export default function Contacts() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src={githubIcon} alt="Logo" height={50} width={50} />
+        <img src={githubIcon} alt="Github" height={50} width={50} />
       </a>
       <a
         href="https://www.linkedin.com/in/eduardo-santos-846a42131"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src={linkedinIcon} alt="Logo" height={50} width={50} />
+        <img src={linkedinIcon} alt="Linkedin" height={50} width={50} />
       </a>
     </div>
   );
