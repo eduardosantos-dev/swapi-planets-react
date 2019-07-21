@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/swapi-planets-react/static/css/main.35f80fe7.chunk.css",
+    "main.js": "/swapi-planets-react/static/js/main.53028e49.chunk.js",
+    "main.js.map": "/swapi-planets-react/static/js/main.53028e49.chunk.js.map",
+    "runtime~main.js": "/swapi-planets-react/static/js/runtime~main.e53256db.js",
+    "runtime~main.js.map": "/swapi-planets-react/static/js/runtime~main.e53256db.js.map",
+    "static/js/2.efb316c2.chunk.js": "/swapi-planets-react/static/js/2.efb316c2.chunk.js",
+    "static/js/2.efb316c2.chunk.js.map": "/swapi-planets-react/static/js/2.efb316c2.chunk.js.map",
+    "index.html": "/swapi-planets-react/index.html",
+    "precache-manifest.b220f5574bb4de4b63fb358aa62017be.js": "/swapi-planets-react/precache-manifest.b220f5574bb4de4b63fb358aa62017be.js",
+    "service-worker.js": "/swapi-planets-react/service-worker.js",
+    "static/css/main.35f80fe7.chunk.css.map": "/swapi-planets-react/static/css/main.35f80fe7.chunk.css.map",
+    "static/media/TwinklingStars.css": "/swapi-planets-react/static/media/twinkling.8abb10df.webp"
+  }
+}
