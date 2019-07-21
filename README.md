@@ -24,28 +24,44 @@ Este projeto utiliza a [SWAPI](https://swapi.co/), uma API incrível que fornece
 ### Clonando respositório
 
 Para iniciar, basta clonar o repositório utilizando:
-`git clone https://github.com/diinoprp/swapi-planets-react.git`
+```
+git clone https://github.com/diinoprp/swapi-planets-react.git
+```
 
 ### Instalando dependências
 
 Para instalar todas as dependências necessárias para o projeto, podemos utilizar:
-`yarn`
+```
+yarn
+```
 ou
-`npm install`
+```
+npm install
+```
 
 ### Servidor de Desenvolvimento
 
 Para iniciar um servidor de desenvolvimento, basta utilizar o comando:
-`yarn start`
+```
+yarn start
+```
 ou
-`npm start`
+```
+npm start
+```
 
 ### Build
 
 Para gerar uma versão otimizada e pronta para o deploy, podemos utilizar:
-`yarn build`
+```
+yarn build
+```
 ou
-`npm run build`
+```
+npm run build
+```
 
 E então, para executar:
-`serve -s build`
+```
+serve -s build
+```
