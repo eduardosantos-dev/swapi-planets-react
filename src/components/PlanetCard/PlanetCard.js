@@ -129,6 +129,15 @@ export default function PlanetCard() {
                     className={classes.planetInfoItem}
                     color="primary"
                   >
+                    Climate:{" "}
+                    <span className={classes.planetInfoData}>
+                      {planet.climate}
+                    </span>
+                  </Typography>
+                  <Typography
+                    className={classes.planetInfoItem}
+                    color="primary"
+                  >
                     Terrain:{" "}
                     <span className={classes.planetInfoData}>
                       {planet.terrain}
